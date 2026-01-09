@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinak Meher | Portfolio</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header id="navbar">
+    <nav>
+        <div class="logo">PM</div>
+        <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    </header>
+
+
+    <!-- HERO WITH UNICORN STUDIO -->
+    <section class="hero">
+        <!-- Unicorn Studio embed -->
+        <div
+            data-us-project="TOeBUjXzdLUGL2FOkmVY"
+            data-us-scale="fit"
+            data-us-dpi="1.5"
+            data-us-production="true"
+            style="width: 100%; height: 100%;">
+        </div>
+
+        <!-- Hero Text Overlay -->
+        <div class="hero-content hover-target"
+            data-image="assets/images/profile1.jpg">
+            <h1>Pinak Meher</h1>
+            <p>Developer • AI Enthusiast • Builder</p>
+
+            <div class="hero-buttons">
+                <a href="#work" class="btn primary">View Work</a>
+                <a href="#contact" class="btn secondary">Contact</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about"
+            class="section hover-target"
+            data-image="assets/images/profile2.jpg">
+        <h2>About Me</h2>
+        <p>
+            I’m a developer passionate about building clean, scalable systems
+            and experimenting with AI-powered products. I enjoy converting ideas
+            into real-world solutions.
+        </p>
+    </section>
+
+    <!-- WORK -->
+    <section id="work" class="section dark">
+        <h2>My Work</h2>
+
+        <div class="cards">
+            <div class="card hover-target"
+                data-image="assets/images/hypershare.jpg">
+                <h3>HyperShare</h3>
+                <p>Local file-sharing system with a custom protocol.</p>
+            </div>
+
+            <div class="card hover-target"
+                data-image="assets/images/ai-photo.jpg">
+                <h3>AI Photo Sorting</h3>
+                <p>Face recognition based photo management system.</p>
+            </div>
+
+            <div class="card hover-target"
+                data-image="assets/images/chatbot.jpg">
+                <h3>College Chatbot</h3>
+                <p>Personalized lecture and timetable assistant.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact"
+            class="section hover-target"
+            data-image="assets/images/profile3.jpg">
+        <h2>Contact</h2>
+        <p>Let’s build something meaningful together.</p>
+
+        <div class="contact-links">
+            <a href="https://github.com/Pinuk14" target="_blank">GitHub</a>
+            <a href="#" target="_blank">LinkedIn</a>
+            <a href="mailto:youremail@example.com">Email</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Pinak Meher</p>
+    </footer>
+
+    <!-- UNICORN STUDIO LOADER (LOAD ONCE) -->
+    <script type="text/javascript">
+    !function(){
+        if(!window.UnicornStudio){
+            window.UnicornStudio={isInitialized:false};
+            var i=document.createElement("script");
+            i.src="https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@v2.0.0/dist/unicornStudio.umd.js";
+            i.onload=function(){
+                if(!window.UnicornStudio.isInitialized){
+                    UnicornStudio.init();
+                    window.UnicornStudio.isInitialized=true;
+                }
+            };
+            (document.head||document.body).appendChild(i);
+        }
+    }();
+    </script>
+
+    <!-- MAIN JS -->
+    <script>
+        const navbar = document.getElementById("navbar");
+        const hero = document.querySelector(".hero");
+
+        window.addEventListener("scroll", () => {
+            const heroBottom = hero.offsetTop + hero.offsetHeight;
+
+            if (window.scrollY >= heroBottom - 10) {
+                navbar.classList.add("show");
+                document.body.classList.add("nav-visible");
+            } else {
+                navbar.classList.remove("show");
+                document.body.classList.remove("nav-visible");
+            }
+        });
+    </script>
+
+
+</body>
+</html>
