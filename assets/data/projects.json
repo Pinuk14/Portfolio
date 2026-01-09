@@ -1,0 +1,48 @@
+[
+  {
+    "id": 1,
+    "title": "IVA – Intelligent Virtual Assistant",
+    "rank": 1,
+    "image": "assets/images/iva.png",
+    "shortDesc": "AI-powered desktop assistant combining generative AI with system automation.",
+    "tech": ["Python", "OpenAI", "Gemini", "SpeechRecognition"],
+    "details": "IVA is a Windows-based assistant capable of executing system-level commands while answering complex queries using LLMs. It supports wake-word detection, voice interaction, and real-time information fetching."
+  },
+  {
+    "id": 2,
+    "title": "Aurasnap – Smart Photo Management",   
+    "rank": 2,
+    "image": "assets/images/aurasnap.png",
+    "shortDesc": "AI-driven face recognition system for event photography automation.",
+    "tech": ["Python", "OpenCV", "ArcFace", "CustomTkinter"],
+    "details": "Aurasnap automatically sorts event photos by recognizing faces, applies dynamic watermarks, and delivers albums to guests via WhatsApp, running entirely offline for privacy."
+  },
+  {
+    "id": 3,
+    "title": "NeuroWall – DDoS Protection System",
+    "rank": 3,
+    "image": "assets/images/neurowall.png",
+    "shortDesc": "ML-based real-time DDoS detection and mitigation platform.",
+    "tech": ["Python", "Flask", "Scikit-learn", "Blockchain"],
+    "details": "NeuroWall combines Isolation Forest and SVM to detect malicious traffic and logs attacks on a tamper-proof blockchain while maintaining high availability."
+  },
+  {
+    "id": 4,
+    "title": "Pawfect Match – Pet Adoption System",
+    "rank": 4,
+    "image": "assets/images/pawfect.png",
+    "shortDesc": "Desktop application for managing pet adoption workflows.",
+    "tech": ["Python", "CustomTkinter", "MySQL"],
+    "details": "Pawfect Match digitizes pet inventory, adoption records, billing, and customer management using an MVC architecture."
+  },
+  {
+    "id": 5,
+    "title": "Gesture & Facial Meme Recognition",
+    "rank": 5,
+    "image": "assets/images/meme.png",
+    "shortDesc": "Real-time meme prediction using facial expressions and gestures.",
+    "tech": ["OpenCV", "MediaPipe", "TensorFlow", "LSTM"],
+    "details": "This system analyzes temporal facial and hand landmark sequences to identify meme reactions using an LSTM-based deep learning model."
+  }
+]
+ 

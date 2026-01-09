@@ -1,78 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Work | Pinak Meher</title>
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="../assets/css/main.css">
-    <link rel="stylesheet" href="../assets/css/animations.css">
-    <script src="../assets/js/main.js"></script>
-
-    <!-- Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <title>My Work</title>
+  <link rel="stylesheet" href="../assets/css/main.css" />
 </head>
-<body class="nav-visible">
+<body>
 
-    <!-- NAVBAR -->
-    <header id="navbar" class="show">
-        <nav class="nav">
-            <div class="logo">PM</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="work.html">Work</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<section class="work-section">
+  <h1>My Projects</h1>
+  <div id="projectsGrid" class="projects-grid"></div>
+</section>
 
-    <!-- HERO -->
-    <section class="work-hero">
-        <h1>My Work</h1>
-        <p>Selected projects I’ve built and experimented with.</p>
-    </section>
+<script>
+fetch("../assets/data/projects.json")
+  .then(res => res.json())
+  .then(projects => {
+    const grid = document.getElementById("projectsGrid");
 
-    <!-- WORK GRID -->
-    <section class="work-section">
-        <div class="work-grid">
+    projects.forEach(p => {
+      const card = document.createElement("div");
+      card.className = "project-card";
 
-            <div class="work-card">
-                <h3>HyperShare</h3>
-                <p>Local file-sharing system with a custom protocol and permissions.</p>
-                <div class="work-links">
-                    <a href="#" target="_blank">GitHub</a>
-                    <a href="#" target="_blank">Details</a>
-                </div>
-            </div>
+      card.innerHTML = `
+        <img src="../${p.image}" alt="${p.title}">
+        <h3>${p.title}</h3>
+        <p>${p.shortDesc}</p>
+        <span class="tech">${p.tech.join(" • ")}</span>
+      `;
 
-            <div class="work-card">
-                <h3>AI Photo Sorting</h3>
-                <p>Face recognition-based photo management system using ArcFace & clustering.</p>
-                <div class="work-links">
-                    <a href="#" target="_blank">GitHub</a>
-                    <a href="#" target="_blank">Details</a>
-                </div>
-            </div>
+      grid.appendChild(card);
+    });
+  });
+</script>
 
-            <div class="work-card">
-                <h3>College Chatbot</h3>
-                <p>Personalized lecture and timetable assistant for students.</p>
-                <div class="work-links">
-                    <a href="#" target="_blank">GitHub</a>
-                    <a href="#" target="_blank">Details</a>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        <p>© 2026 Pinak Meher</p>
-    </footer>
-
-    <!-- JS -->
-    <script src="../assets/js/main.js"></script>
 </body>
 </html>
