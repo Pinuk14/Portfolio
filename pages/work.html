@@ -23,16 +23,26 @@ fetch("../assets/data/projects.json")
       card.className = "project-card";
 
       card.innerHTML = `
-        <img src="../${p.image}" alt="${p.title}">
+        <img src="../${p.cover}" alt="${p.title}">
         <h3>${p.title}</h3>
         <p>${p.shortDesc}</p>
         <span class="tech">${p.tech.join(" • ")}</span>
       `;
 
+      card.onclick = () => openProject(p);
       grid.appendChild(card);
     });
   });
+
 </script>
+<div id="projectModal" class="modal hidden">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">×</span>
+    <h2 id="modalTitle"></h2>
+    <p id="modalDesc"></p>
+    <div id="modalMedia" class="media-grid"></div>
+  </div>
+</div>
 
 </body>
 </html>

@@ -1,0 +1,16 @@
+[
+  {
+    "id": "multi-agent-ai",
+    "title": "Multi-Agent AI System",
+    "description": "Building a collaborative AI framework with autonomous agents",
+    "progress": 10,
+    "color": "purple"
+  },
+  {
+    "id": "nas-tool",
+    "title": "Neural Architecture Search Tool",
+    "description": "Automated ML model optimization using evolutionary algorithms",
+    "progress": 40,
+    "color": "green"
+  }
+]
