@@ -16,6 +16,8 @@ def reset_stats():
 
         # Clear IP-based like cooldowns
         c.execute("DELETE FROM likes_ip")
+        c.execute("DELETE FROM comments")
+
 
         conn.commit()
 
