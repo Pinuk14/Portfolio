@@ -1,156 +1,158 @@
 [
-  {
-    "id": "iva",
-    "title": "IVA – Intelligent Virtual Assistant",
-    "rank": 1,
-    "cover": "assets/images/iva/cover.png",
-
-    "media": {
-      "images": [
-        "assets/images/iva/1.png",
-        "assets/images/iva/2.png",
-        "assets/images/iva/3.png",
-        "assets/images/iva/4.png",
-        "assets/images/iva/5.png",
-        "assets/images/iva/6.png",
-        "assets/images/iva/7.png",
-        "assets/images/iva/8.png"
-      ],
-      "video": null
+    {
+        "id": "aurasnap",
+        "rank":1,
+        "title": "AuraSnap – Smart Photo Management System",
+        "shortDesc": "AI-based face recognition system for automated event photo sorting.",
+        "details": "AuraSnap is an offline-first photo management system designed for events. It uses ArcFace embeddings and clustering to recognize guests, auto-sort photos, apply dynamic watermarks, and distribute albums via WhatsApp while maintaining data privacy.",
+        "tech": [
+            "Python",
+            "OpenCV",
+            "ArcFace",
+            "HDBSCAN",
+            "CustomTkinter",
+            "NVDIA Omniverse"
+        ],
+        "media": {
+            "cover": "assets/images/aurasnap/cover.jpeg",
+            "images": [
+                "assets/images/aurasnap/1.jpeg",
+                "assets/images/aurasnap/2.jpeg",
+                "assets/images/aurasnap/3.jpeg",
+                "assets/images/aurasnap/4.jpeg",
+                "assets/images/aurasnap/6.png",
+                "assets/images/aurasnap/7.jpeg",
+                "assets/images/aurasnap/8.jpeg",
+                "assets/images/aurasnap/9.jpeg",
+                "assets/images/aurasnap/10.jfif",
+                "assets/images/aurasnap/11.jfif",
+                "assets/images/aurasnap/12.jfif"
+            ],
+            "video": "assets/videos/AuraSnap.mp4"
+        },
+        "status": "completed",
+        "links": {
+            "github": "https://github.com/Pinuk14/AuraSnap",
+            "demo": null
+        }
     },
-
-    "shortDesc": "AI-powered desktop assistant combining generative AI with system-level automation.",
-    "details": "IVA is a Windows-based intelligent virtual assistant that combines large language models with system automation. It can execute OS-level commands, answer complex queries, respond via voice, and fetch real-time data. Designed with modular architecture and offline-safe execution layers.",
-    "tech": [
-      "Python",
-      "OpenAI",
-      "Gemini API",
-      "Speech Recognition",
-      "Text-to-Speech",
-      "Automation"
-    ],
-    "links": {
-      "github": "https://github.com/Pinuk14",
-      "demo": null
-    }
-  },
-
-  {
-    "id": "aurasnap",
-    "title": "AuraSnap – Smart Photo Management System",
-    "rank": 2,
-    "cover": "assets/images/aurasnap/cover.jpeg",
-
-    "media": {
-      "images": [
-        "assets/images/aurasnap/1.png",
-        "assets/images/aurasnap/2.png",
-        "assets/images/aurasnap/3.png"
-      ],
-      "video": null
+    {
+        "id": "neurowall",
+        "rank":3,
+        "title": "NeuroWall – ML-Based DDoS Protection",
+        "shortDesc": "Machine learning driven real-time DDoS detection and mitigation platform.",
+        "details": "NeuroWall analyzes network traffic patterns using anomaly detection models to identify DDoS attacks in real time. It maintains high availability, logs malicious events securely, and supports cloud deployment scenarios.",
+        "tech": [
+            "Python",
+            "Flask",
+            "Scikit-learn",
+            "Isolation Forest",
+            "SVM",
+            "Blockchain Logging"
+        ],
+        "media": {
+            "cover": "assets/images/neurowall/cover.jpg",
+            "images": [
+                "assets/images/neurowall/1.png",
+                "assets/images/neurowall/2.png",
+                "assets/images/neurowall/3.png"
+            ],
+            "video": "assets/videos/Neurowall.mp4"
+        },
+        "status": "completed",
+        "links": {
+            "github": "https://github.com/Pinuk14/NuroWall",
+            "demo": null
+        }
     },
-
-    "shortDesc": "AI-based face recognition system for automated event photo sorting.",
-    "details": "AuraSnap is an offline-first photo management system designed for events. It uses ArcFace embeddings and clustering to recognize guests, auto-sort photos, apply dynamic watermarks, and distribute albums via WhatsApp while maintaining data privacy.",
-    "tech": [
-      "Python",
-      "OpenCV",
-      "ArcFace",
-      "HDBSCAN",
-      "CustomTkinter",
-      "NVDIA Omniverse"
-    ],
-    "links": {
-      "github": "https://github.com/Pinuk14",
-      "demo": null
-    }
-  },
-
-  {
-    "id": "neurowall",
-    "title": "NeuroWall – ML-Based DDoS Protection",
-    "rank": 3,
-    "cover": "assets/images/neurowall/cover.png",
-
-    "media": {
-      "images": [
-        "assets/images/neurowall/1.png",
-        "assets/images/neurowall/2.png"
-      ],
-      "video": null
+    {
+        "id": "pawfect",
+        "rank":4,
+        "title": "Pawfect Match – Pet Adoption Management System",
+        "shortDesc": "Desktop application for managing pet adoption workflows and records.",
+        "details": "Pawfect Match digitizes pet adoption processes including pet inventory, adopter details, billing, and staff workflows. The system is built using a clean MVC architecture and offers a modern UI using CustomTkinter.",
+        "tech": [
+            "Python",
+            "CustomTkinter",
+            "MySQL",
+            "MVC Architecture"
+        ],
+        "media": {
+            "cover": "assets/images/pawfect/cover.jpeg",
+            "images": [
+                "assets/images/pawfect/1.png",
+                "assets/images/pawfect/2.png",
+                "assets/images/pawfect/3.png",
+                "assets/images/pawfect/4.png",
+                "assets/images/pawfect/5.png"
+            ],
+            "video": null
+        },
+        "status": "completed",
+        "links": {
+            "github": "https://github.com/Pinuk14",
+            "demo": null
+        }
     },
-
-    "shortDesc": "Machine learning driven real-time DDoS detection and mitigation platform.",
-    "details": "NeuroWall analyzes network traffic patterns using anomaly detection models to identify DDoS attacks in real time. It maintains high availability, logs malicious events securely, and supports cloud deployment scenarios.",
-    "tech": [
-      "Python",
-      "Flask",
-      "Scikit-learn",
-      "Isolation Forest",
-      "SVM",
-      "Blockchain Logging"
-    ],
-    "links": {
-      "github": "https://github.com/Pinuk14",
-      "demo": null
-    }
-  },
-
-  {
-    "id": "pawfect",
-    "title": "Pawfect Match – Pet Adoption Management System",
-    "rank": 4,
-    "cover": "assets/images/pawfect/cover.png",
-
-    "media": {
-      "images": [
-        "assets/images/pawfect/1.png",
-        "assets/images/pawfect/2.png"
-      ],
-      "video": null
+    {
+        "id": "meme-ai",
+        "rank":5,
+        "title": "Meme Recognition System by Facial & Hand Gestures",
+        "shortDesc": "Real-time meme prediction using facial expressions and hand gestures.",
+        "details": "This system captures temporal facial and hand landmark data using MediaPipe and predicts meme reactions using an LSTM-based deep learning model. It supports both short facial reactions and longer gesture-based actions.",
+        "tech": [
+            "OpenCV",
+            "MediaPipe",
+            "TensorFlow",
+            "LSTM",
+            "Computer Vision"
+        ],
+        "media": {
+            "cover": "assets/images/meme/cover.png",
+            "images": [
+                "assets/images/meme/1.png",
+                "assets/images/meme/2.png"
+            ],
+            "video": null
+        },
+        "status": "completed",
+        "links": {
+            "github": "https://github.com/Pinuk14/Meme-Recognizer",
+            "demo": null
+        }
     },
-
-    "shortDesc": "Desktop application for managing pet adoption workflows and records.",
-    "details": "Pawfect Match digitizes pet adoption processes including pet inventory, adopter details, billing, and staff workflows. The system is built using a clean MVC architecture and offers a modern UI using CustomTkinter.",
-    "tech": [
-      "Python",
-      "CustomTkinter",
-      "MySQL",
-      "MVC Architecture"
-    ],
-    "links": {
-      "github": "https://github.com/Pinuk14",
-      "demo": null
+    {
+        "id": "iva",
+        "rank":2,
+        "title": "IVA – Intelligent Virtual Assistant",
+        "shortDesc": "AI-powered desktop assistant combining generative AI with system-level automation.",
+        "details": "IVA is a Windows-based intelligent virtual assistant that combines large language models with system automation. It can execute OS-level commands, answer complex queries, respond via voice, and fetch real-time data. Designed with modular architecture and offline-safe execution layers.",
+        "tech": [
+            "Python",
+            "OpenAI",
+            "Gemini API",
+            "Speech Recognition",
+            "Text-to-Speech",
+            "Automation"
+        ],
+        "media": {
+            "cover": "assets/images/iva/cover.png",
+            "images": [
+                "assets/images/iva/1.png",
+                "assets/images/iva/2.png",
+                "assets/images/iva/3.png",
+                "assets/images/iva/4.png",
+                "assets/images/iva/5.png",
+                "assets/images/iva/6.png",
+                "assets/images/iva/7.png",
+                "assets/images/iva/8.png"
+            ],
+            "video": null
+        },
+        "status": "completed",
+        "links": {
+            "github": "https://github.com/Pinuk14",
+            "demo": null
+        }
     }
-  },
-
-  {
-    "id": "meme-ai",
-    "title": "Gesture & Facial Meme Recognition System",
-    "rank": 5,
-    "cover": "assets/images/meme/cover.png",
-
-    "media": {
-      "images": [
-        "assets/images/meme/1.png",
-        "assets/images/meme/2.png",
-        "assets/images/meme/3.png"
-      ],
-      "video": null
-    },
-
-    "shortDesc": "Real-time meme prediction using facial expressions and hand gestures.",
-    "details": "This system captures temporal facial and hand landmark data using MediaPipe and predicts meme reactions using an LSTM-based deep learning model. It supports both short facial reactions and longer gesture-based actions.",
-    "tech": [
-      "OpenCV",
-      "MediaPipe",
-      "TensorFlow",
-      "LSTM",
-      "Computer Vision"
-    ],
-    "links": {
-      "github": "https://github.com/Pinuk14",
-      "demo": null
-    }
-  }
 ]

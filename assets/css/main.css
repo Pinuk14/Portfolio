@@ -95,6 +95,8 @@
             padding: 5rem 1rem;
             max-width: 1200px;
             margin: 0 auto;
+            position: relative;
+            z-index: 5;
         }
 
         .section-title {
@@ -267,15 +269,23 @@
         .achievement-card {
             background: linear-gradient(135deg, rgba(234, 179, 8, 0.1), rgba(249, 115, 22, 0.1));
             backdrop-filter: blur(10px);
-            border-radius: 1rem;
-            padding: 1.5rem;
+            border-radius: 14px;
+            padding: 1rem;
             border: 1px solid rgba(234, 179, 8, 0.3);
             text-align: center;
         }
 
+        .achievement-cover {
+            width: 100%;
+            height: 120px;
+            object-fit: contain;
+            margin-bottom: 0.5rem;
+        }
+
         .achievement-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 2.2rem;
+            display: block;
+            margin-bottom: 0.5rem;
         }
 
         .achievement-title {
@@ -320,6 +330,9 @@
             color: #9ca3af;
             font-size: 1.125rem;
             margin-bottom: 2rem;
+        }
+        .view-count svg {
+            stroke: #e5e7eb;
         }
 
         .reviews-list {
@@ -434,14 +447,18 @@
 
         /* Footer */
         footer {
-            padding: 3rem 1rem;
+            padding: 4rem 1rem;
             text-align: center;
             border-top: 1px solid rgba(255,255,255,0.1);
+            position: relative;
+            z-index: 5;
         }
 
         .footer-text {
             color: #9ca3af;
             margin-bottom: 1rem;
+            position: relative;
+            z-index: 5;
         }
 
         .footer-links {
@@ -454,6 +471,8 @@
             color: #9ca3af;
             text-decoration: none;
             transition: color 0.3s;
+            position: relative;
+            z-index: 5;
         }
 
         .footer-link:hover {
@@ -551,7 +570,9 @@
 
         .carousel {
             position: relative;
-            margin-bottom: 1rem;
+            overflow: hidden;
+            border-radius: 16px;
+            margin-bottom: 2rem;
         }
 
         .carousel-track {
@@ -560,6 +581,8 @@
             background: rgba(0,0,0,0.35);
             border-radius: 14px;
             overflow: hidden;
+            display: flex;
+            transition: transform 0.3s ease;
         }
 
         .carousel-slide {
@@ -645,3 +668,63 @@
     max-height: 95%;
     object-fit: contain;
 }
+
+.project-detail {
+    max-width: 900px;
+    margin: auto;
+    padding: 2rem;
+}
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    margin-bottom: 2rem;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+.slide {
+    min-width: 100%;
+}
+
+.slide img,
+.slide video {
+    width: 100%;
+    height: 420px;
+    object-fit: contain; /* 🔥 solves aspect ratio issue */
+    background: #000;
+}
+
+.nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 0.2rem 0.8rem;
+    cursor: pointer;
+}
+
+.nav.prev { left: 10px; }
+.nav.next { right: 10px; }
+
+.tech-stack span {
+    background: #222;
+    padding: 6px 10px;
+    border-radius: 6px;
+    margin: 4px;
+    display: inline-block;
+}
+
+.links a {
+    margin-right: 12px;
+}
+
+
+

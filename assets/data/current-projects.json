@@ -1,16 +1,9 @@
 [
   {
-    "id": "multi-agent-ai",
-    "title": "Multi-Agent AI System",
-    "description": "Building a collaborative AI framework with autonomous agents",
-    "progress": 10,
+    "id": "hypershare",
+    "title": "Hypershare",
+    "description": "HyperShare is a local network-based communication and sharing system.",
+    "progress": 0,
     "color": "purple"
-  },
-  {
-    "id": "nas-tool",
-    "title": "Neural Architecture Search Tool",
-    "description": "Automated ML model optimization using evolutionary algorithms",
-    "progress": 40,
-    "color": "green"
   }
 ]

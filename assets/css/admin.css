@@ -1,0 +1,99 @@
+body {
+    font-family: system-ui;
+    padding: 2rem;
+    background: #0f172a;
+    color: #fff;
+}
+
+input, textarea, button {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.5rem;
+    padding: 0.6rem;
+    border-radius: 6px;
+    border: none;
+}
+
+button {
+    background: #2563eb;
+    color: white;
+    cursor: pointer;
+}
+
+.admin-card {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: rgba(255,255,255,0.05);
+    border-radius: 8px;
+}
+
+.admin-actions a {
+    display: inline-block;
+    margin: 0.5rem;
+    padding: 0.8rem 1.2rem;
+    background: rgba(255,255,255,0.05);
+    border-radius: 10px;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.admin-actions a:hover {
+    background: rgba(255,255,255,0.12);
+    transform: translateY(-2px);
+}
+
+
+.login-box {
+    max-width: 360px;
+    margin: 15vh auto;
+    padding: 2rem;
+    background: rgba(255,255,255,0.06);
+    border-radius: 12px;
+    text-align: center;
+}
+
+.login-box h2 {
+    margin-bottom: 1rem;
+}
+
+.error {
+    color: #f87171;
+    margin-bottom: 1rem;
+}
+
+.admin-form input,
+.admin-form textarea {
+    margin-bottom: 0.5rem;
+}
+
+.admin-card form {
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+
+label {
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+select {
+    width: 100%;
+    padding: 0.6rem;
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+}
+
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 12px;
+    margin-top: 1rem;
+}
+
+.media-card img,
+.media-card video {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+}

@@ -18,6 +18,28 @@ document.addEventListener("DOMContentLoaded", async () => {
     await loadCurrentProjects(); 
     await loadComments();
 });
+document.addEventListener("keydown", e => {
+    if (!document.getElementById("projectModal")?.classList.contains("open")) return;
+
+    if (e.key === "ArrowRight") nextSlide();
+    if (e.key === "ArrowLeft") prevSlide();
+    if (e.key === "Escape") closeProjectModal();
+});
+
+document.addEventListener("mouseover", e => {
+    if (e.target.closest(".carousel")) stopAutoPlay();
+});
+
+document.addEventListener("mouseout", e => {
+    if (e.target.closest(".carousel")) startAutoPlay();
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    fetch("/api/achievements")
+        .then(res => res.json())
+        .then(data => renderAchievements(data))
+        .catch(err => console.error("Failed to load achievements", err));
+});
 
 /* =========================
   STATS (VIEWS + LIKES)
@@ -60,7 +82,7 @@ function renderProjects() {
     grid.innerHTML = visible.map(p => `
         <div class="project-card" onclick="openProjectModal('${p.id}')">
             <div class="project-image">
-                <img src="${p.cover}" alt="${p.title}">
+                <img src="/${p.media.cover}" alt="${p.title}">
             </div>
 
             <div class="project-content">
@@ -271,23 +293,6 @@ function goToSlide(index) {
     showSlide(index);
 }
 
-document.addEventListener("keydown", e => {
-    if (!document.getElementById("projectModal")?.classList.contains("open")) return;
-
-    if (e.key === "ArrowRight") nextSlide();
-    if (e.key === "ArrowLeft") prevSlide();
-    if (e.key === "Escape") closeProjectModal();
-});
-
-document.addEventListener("mouseover", e => {
-    if (e.target.closest(".carousel")) stopAutoPlay();
-});
-
-document.addEventListener("mouseout", e => {
-    if (e.target.closest(".carousel")) startAutoPlay();
-});
-
-
 function openFullscreen(src) {
     const viewer = document.getElementById("fullscreenViewer");
     document.getElementById("fullscreenImg").src = src;
@@ -309,3 +314,21 @@ function stopAutoPlay() {
         autoPlayInterval = null;
     }
 }
+
+function renderAchievements(list) {
+    const container = document.getElementById("achievements");
+
+    container.innerHTML = list.map(a => `
+        <div class="achievement-card">
+            ${
+                a.cover
+                ? `<img src="${a.cover}" class="achievement-cover">`
+                : `<div class="achievement-icon">${a.icon || "🏆"}</div>`
+            }
+            <h4 class="achievement-title">${a.title}</h4>
+            <p class="achievement-desc">${a.description || ""}</p>
+            ${a.date ? `<small class="achievement-date">${a.date}</small>` : ""}
+        </div>
+    `).join("");
+}
+
