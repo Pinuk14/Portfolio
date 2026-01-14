@@ -243,5 +243,4 @@ def toggle_achievement(id):
     return redirect("/admin/achievements")
 
 # Admin Ends
-if __name__ == "__main__":
-    app.run(port=5500, debug=True)
+
