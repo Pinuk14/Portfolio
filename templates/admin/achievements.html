@@ -1,34 +1,37 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Achievements Admin</title>
     <link rel="stylesheet" href="/assets/css/admin.css">
 </head>
+
 <body>
 
-<h2>Achievements</h2>
+    <h2>Achievements</h2>
 
-<form method="POST" action="/admin/achievements/add">
-    <input name="title" placeholder="Title" required>
-    <input name="icon" placeholder="Emoji (optional)">
-    <input name="date" placeholder="Date">
-    <textarea name="description" placeholder="Description"></textarea>
-    <button>Add Achievement</button>
-</form>
-
-<hr>
-
-{% for a in achievements %}
-<div class="admin-card">
-    <strong>{{ a[1] }}</strong>
-    <p>{{ a[2] }}</p>
-    <small>{{ "Visible" if a[5] else "Hidden" }}</small>
-
-    <form method="POST" action="/admin/achievements/toggle/{{ a[0] }}">
-        <button>{{ "Hide" if a[5] else "Show" }}</button>
+    <form method="POST" action="/admin/achievements/add">
+        <input name="title" placeholder="Title" required>
+        <input name="icon" placeholder="Emoji (optional)">
+        <input name="date" placeholder="Date">
+        <textarea name="description" placeholder="Description"></textarea>
+        <button>Add Achievement</button>
     </form>
-</div>
-{% endfor %}
+
+    <hr>
+
+    {% for a in achievements %}
+    <div class="admin-card">
+        <strong>{{ a[1] }}</strong>
+        <p>{{ a[2] }}</p>
+        <small>{{ "Visible" if a[5] else "Hidden" }}</small>
+
+        <form method="POST" action="/admin/achievements/toggle/{{ a[0] }}">
+            <button class="btn-secondary">{{ "Hide" if a[5] else "Show" }}</button>
+        </form>
+    </div>
+    {% endfor %}
 
 </body>
+
 </html>

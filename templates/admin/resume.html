@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Manage Resume</title>
+    <link rel="stylesheet" href="/assets/css/admin.css">
+</head>
+
+<body>
+
+    <h2>Manage Resume</h2>
+
+    <div class="admin-actions">
+        <a href="/admin/dashboard">⬅ Back to Dashboard</a>
+    </div>
+
+    <hr>
+
+    <div class="admin-card">
+        <p>Upload a new PDF to replace the current resume.</p>
+        <br>
+
+        {% if success %}
+        <p style="color: #4ade80; margin-bottom: 1rem;">✅ {{ success }}</p>
+        {% endif %}
+
+        <form method="POST" enctype="multipart/form-data">
+            <label>Select PDF File:</label>
+            <input type="file" name="resume" accept=".pdf" required>
+            <button class="btn-secondary">Upload Resume</button>
+        </form>
+
+        <br>
+        <p>
+            Currently hosted:
+            <a href="/resume" target="_blank">View Current Resume</a>
+        </p>
+    </div>
+
+</body>
+
+</html>

@@ -242,5 +242,49 @@ def toggle_achievement(id):
 
     return redirect("/admin/achievements")
 
+@app.route("/admin/comments")
+def admin_comments():
+    if not session.get("admin"):
+        return redirect("/admin/login")
+
+    with sqlite3.connect(STATS_DB) as conn:
+        c = conn.cursor()
+        c.execute("SELECT id, name, comment, timestamp FROM comments ORDER BY id DESC")
+        rows = c.fetchall()
+
+    return render_template("admin/comments.html", comments=rows)
+
+@app.route("/admin/comments/delete/<int:id>", methods=["POST"])
+def delete_comment(id):
+    if not session.get("admin"):
+        return "Unauthorized", 401
+
+    with sqlite3.connect(STATS_DB) as conn:
+        conn.execute("DELETE FROM comments WHERE id = ?", (id,))
+
+    return redirect("/admin/comments")
+
+@app.route("/resume")
+def serve_resume():
+    try:
+        return send_from_directory("assets/docs", "resume.pdf", as_attachment=False)
+    except:
+        return "Resume not available", 404
+
+@app.route("/admin/resume", methods=["GET", "POST"])
+def admin_resume():
+    if not session.get("admin"):
+        return redirect("/admin/login")
+    
+    success_msg = None
+    if request.method == "POST":
+        file = request.files.get("resume")
+        if file and file.filename.endswith(".pdf"):
+            os.makedirs("assets/docs", exist_ok=True)
+            file.save(os.path.join("assets/docs", "resume.pdf"))
+            success_msg = "Resume uploaded successfully!"
+    
+    return render_template("admin/resume.html", success=success_msg)
+
 # Admin Ends
 
