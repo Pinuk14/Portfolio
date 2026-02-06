@@ -1,8 +1,8 @@
 [
   {
-    "id": "hypershare",
-    "title": "Hypershare",
-    "description": "HyperShare is a local network-based communication and sharing system.",
+    "id": "winsight",
+    "title": "WINSIGHT",
+    "description": "WINSIGHT (Windows Intelligence & Security Threat Hub) is a distributed monitoring system designed for controlled environments such as college computer labs.",
     "progress": 0,
     "color": "purple"
   }

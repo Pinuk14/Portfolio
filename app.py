@@ -17,6 +17,7 @@ ADMIN_PASSWORD_HASH = os.getenv("ADMIN_PASSWORD_HASH", "")
 STATS_DB = "assets/data/stats.db"
 CONTENT_DB = "assets/data/content.db"
 LIKE_COOLDOWN = 60
+VIEW_COOLDOWN = 3600  # 1 hour cooldown for views
 UPLOAD_FOLDER = "assets/images"
 
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
@@ -36,6 +37,12 @@ def init_db():
             CREATE TABLE IF NOT EXISTS likes_ip (
                 ip TEXT PRIMARY KEY,
                 last_liked INTEGER
+            )
+        """)
+        c.execute("""
+            CREATE TABLE IF NOT EXISTS views_ip (
+                ip TEXT PRIMARY KEY,
+                last_viewed INTEGER
             )
         """)
         c.execute("""
@@ -60,7 +67,29 @@ init_db()
 # ---------- ROUTES ----------
 @app.route("/")
 def index():
-    increment_views()
+    ip = request.remote_addr
+    now = int(time.time())
+    
+    with sqlite3.connect(STATS_DB) as conn:
+        c = conn.cursor()
+        
+        # Check if IP viewed recently
+        c.execute("SELECT last_viewed FROM views_ip WHERE ip=?", (ip,))
+        row = c.fetchone()
+        
+        should_increment = False
+        if not row:
+            # First time visiting
+            should_increment = True
+        elif now - row[0] > VIEW_COOLDOWN:
+            # Cooldown expired
+            should_increment = True
+            
+        if should_increment:
+            c.execute("UPDATE stats SET views = views + 1 WHERE id=1")
+            c.execute("INSERT OR REPLACE INTO views_ip (ip, last_viewed) VALUES (?,?)", (ip, now))
+            conn.commit()
+
     return send_from_directory(".", "index.html")
 
 def increment_views():
